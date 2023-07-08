@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/styles/album-style.css" />
+
+<h1>Albums</h1>
+
+<% if (albums.length > 0) { %> <% albums.forEach(album => { %>
+<div class="album-card">
+  <h2><%= album.name %></h2>
+  <% if (album.images.length > 0) { %>
+  <img src="<%= album.images[1].url %>" alt="Album Cover" />
+  <a href="/tracks/<%= album.id %>" class="btn">View Tracks</a>
+</div>
+<% } else { %>
+<img src="/images/default-cover-art" alt="" />
+<% } %> <% }) %> <% } %>
