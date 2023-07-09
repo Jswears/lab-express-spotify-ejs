@@ -53,7 +53,9 @@ initApp();
 
 // Our routes go here:
 app.get("/", (request, response) => {
-  response.render("index");
+  const pageTitle = "Espotifai";
+  const pageStyling = "/styles/index.css";
+  response.render("index", { pageTitle, pageStyling });
 });
 
 app.get("/artist-search", async (request, response) => {
@@ -68,9 +70,12 @@ app.get("/artist-search", async (request, response) => {
     // console.log("Input value", artistSearch);
     const data = await getArtist(artistSearch);
     const artist = data.body.artists.items;
-
+    const pageTitle = artist[0].name;
+    const pageStyling = "/styles/artist-style.css";
     response.render("artist-search-results", {
       artist: artist[0],
+      pageTitle,
+      pageStyling,
     });
   } catch (error) {
     console.log("There has been an error", error);
@@ -80,11 +85,13 @@ app.get("/artist-search", async (request, response) => {
 
 app.get("/all-albums/:artistId", async (request, response) => {
   const artistId = request.params.artistId;
+  const pageTitle = "Albums";
+  const pageStyling = "/styles/album-style.css";
 
   try {
     const data = await spotifyApi.getArtistAlbums(artistId);
     const albums = data.body.items;
-    response.render("all-albums", { albums });
+    response.render("all-albums", { albums, pageTitle, pageStyling });
   } catch (error) {
     console.log("There has been an error ", error);
   }
@@ -93,12 +100,14 @@ app.get("/all-albums/:artistId", async (request, response) => {
 app.get("/:name/:albumId", async (request, response) => {
   const name = request.params.name;
   const albumId = request.params.albumId;
+  const pageStyling = "/styles/tracks.css";
 
   try {
     const data = await spotifyApi.getAlbumTracks(albumId);
     const tracks = data.body.items;
+    const pageTitle = "Songs";
     console.log(tracks);
-    response.render("track-information", { tracks });
+    response.render("track-information", { tracks, pageTitle, pageStyling });
   } catch (error) {
     console.log("There has been an error ", error);
   }
