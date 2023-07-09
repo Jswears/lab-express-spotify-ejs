@@ -1,4 +1,8 @@
-<h1>Albums</h1>
+<div class="nav">
+  <h1>Albums</h1>
+  <a href="/" id="home-link">Home</a>
+</div>
+
 <div class="main-albums">
   <% if (albums.length > 0) { %> <% albums.forEach(album => { %>
   <div class="album-card">
@@ -9,9 +13,7 @@
     <% } %>
     <h2><%= album.name %></h2>
     <% if (album.images.length > 0) { %>
-    <button class="button-42" role="button">
-      <a href="/tracks/<%= album.id %>" class="btn">View Tracks</a>
-    </button>
+    <a href="/tracks/<%= album.id %>" class="button-42">View Tracks</a>
     <% } %>
   </div>
   <% }) %> <% } %>

@@ -1,7 +1,18 @@
-<h1>Songs preview</h1>
+
+<div class="nav"><h1>Songs</h1>
+  <div id="navigation"><a href="/" class="home-button">Home</a><form>
+    <input class="home-button" type="button" value="Go back to albums" onclick="history.back()">
+  </form></div></div>
+
+<div class="info-bar">
+  <h2>Title</h2>
+  <h2>Listen</h2>
+</div>
+
+
 
 <% tracks.forEach(track => { %>
-<figure>
+<figure class="song-preview">
   <% if (track.preview_url) { %>
   <figcaption><%= track.name %></figcaption>
   <audio controls src="<%= track.preview_url %>"></audio>

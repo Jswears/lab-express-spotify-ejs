@@ -1,8 +1,18 @@
 h1 {
+  font-size: 6rem;
+  color: #fff;
+  text-shadow: 0 0 40px rgba(0, 0, 0, 0.58);
+  padding-bottom: 2rem;
+}
+
+.nav {
   margin: 100px auto;
   text-align: center;
-  font-size: 5rem;
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-albums {
@@ -21,7 +31,6 @@ h1 {
   background: #4d4d4d;
   color: #fff;
   text-align: center;
-  font-size: 10px;
   padding-bottom: 15px;
   margin-bottom: 30px;
   border-radius: 10px;
@@ -39,35 +48,36 @@ h1 {
   color: #fff;
 }
 
+.album-card h2 {
+  font-size: 2rem;
+  margin: 10px;
+}
+
 .button-42 {
   background-color: initial;
   background-image: linear-gradient(-180deg, #ff7e40, #9e3524);
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
   color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial,
-    sans-serif;
   height: 40px;
   line-height: 40px;
-  outline: 0;
-  overflow: hidden;
   padding: 0 20px;
-  pointer-events: auto;
-  position: relative;
   text-align: center;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: top;
-  white-space: nowrap;
   width: 50%;
-  z-index: 9;
   border: 0;
   transition: box-shadow 0.2s;
+  font-size: 15px;
 }
 
 .button-42:hover {
-  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+  box-shadow: rgba(253, 76, 0, 0.78) 0 3px 8px;
+}
+
+#home-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 3rem;
+  background-color: #c14e38;
+  padding: 10px;
+  border-radius: 20px;
 }
